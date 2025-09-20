@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arleta HS Internships · 2025–2026</title>
+  <meta name="description" content="Search internships for Arleta High School students in Pacoima, Arleta, Sylmar, Northridge, SFV & Remote." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip" href="#results">Skip to results</a>
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/ahs.gif" alt="Arleta High School logo" width="120" height="60" />
+      <div class="titles">
+        <h1>Arleta HS Internships</h1>
+        <p class="sub">Local & remote opportunities · 2025–2026</p>
+      </div>
+    </div>
+    <nav aria-label="Primary">
+      <a href="#results">Browse</a>
+      <a href="data/internships.json" target="_blank" rel="noopener">Data</a>
+      <a href="README.md" target="_blank" rel="noopener">About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Find something real</h2>
+    <p>Search or scroll—every card is a lead you can actually act on. No fluff.</p>
+    <form id="controls" class="controls" onsubmit="return false;" role="search" aria-label="Search and filters">
+      <label class="visually-hidden" for="q">Search internships</label>
+      <input id="q" type="search" placeholder="Search by title, organization, notes…" autocomplete="off" />
+      <select id="locationFilter" aria-label="Filter by location">
+        <option value="">All locations</option>
+        <option>Pacoima</option>
+        <option>Arleta</option>
+        <option>Sylmar</option>
+        <option>Northridge</option>
+        <option>Los Angeles</option>
+        <option>Remote</option>
+        <option>Hybrid</option>
+        <option>On-site</option>
+      </select>
+      <select id="paidFilter" aria-label="Filter by pay">
+        <option value="">Paid or Unpaid</option>
+        <option value="paid">Paid / Stipend</option>
+        <option value="unpaid">Unpaid</option>
+      </select>
+      <select id="deadlineFilter" aria-label="Filter by deadline month">
+        <option value="">All deadlines</option>
+      </select>
+      <select id="sort" aria-label="Sort results">
+        <option value="soonest">Sort: Soonest deadline</option>
+        <option value="az">Sort: A–Z</option>
+      </select>
+    </form>
+  </section>
+
+  <main id="results" class="grid" aria-live="polite">
+  </main>
+
+  <template id="empty-state">
+    <div class="empty">
+      <h3>No matches yet</h3>
+      <p>Clear filters or try different keywords.</p>
+    </div>
+  </template>
+
+  <template id="card-tpl">
+    <article class="card">
+      <header>
+        <h3 class="title"></h3>
+        <p class="org"></p>
+      </header>
+      <ul class="meta">
+        <li class="loc"></li>
+        <li class="remote"></li>
+        <li class="eligibility"></li>
+        <li class="pay"></li>
+        <li class="deadline"></li>
+      </ul>
+      <p class="notes"></p>
+      <p class="actions">
+        <a class="apply-btn" target="_blank" rel="noopener">Apply / Details</a>
+      </p>
+    </article>
+  </template>
+
+  <footer class="site-footer">
+    <p>From Arleta High School, Made by Maycoly</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
